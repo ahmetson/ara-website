@@ -8,11 +8,11 @@ import { Button } from '@/components/shared/ui/button'
     class="sticky top-0 bg-gradient-to-b from-red-400/10 from-30% to-80% backdrop-blur max-w-[100vw] flex flex-row justify-between items-center p-6 z-10">
     <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between">
       <div class="flex items-center gap-[15px]">
-        <img class="max-w-[71px] md:max-w-[71px]" src="/ara_logo.svg" alt="Logo">
-        <h5 class="text-red-500">ARA</h5>
+        <img class="max-w-[36px] md:max-w-[71px]" src="/ara_logo.svg" alt="Logo">
+        <h5 class="text-red-500 text-[24px] md:text-[32px]">ARA</h5>
       </div>
       <div class="flex item gap-[48px]">
-        <nav class="hidden md:flex  gap-[32px]">
+        <nav class="hidden lg:flex  gap-[32px]">
           <a href="/#goto-ara">
             <Button variant="link">
               Development
@@ -34,13 +34,16 @@ import { Button } from '@/components/shared/ui/button'
             </Button>
           </a>
         </nav>
-        <div class="flex gap-[32px]">
+        <div class="hidden lg:flex gap-[32px]">
           <Button>
             Invest in ARA
           </Button>
           <Button variant="outline">
             Join ARA
           </Button>
+        </div>
+        <div class="lg:hidden">
+          <FeaturesBurgerMenu />
         </div>
 
       </div>
