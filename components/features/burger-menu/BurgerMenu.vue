@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TextAlignJustifyIcon } from '@radix-icons/vue';
-
+import links from '~/lib/links';
 
 </script>
 
@@ -15,31 +15,38 @@ import { TextAlignJustifyIcon } from '@radix-icons/vue';
       <DropdownMenuLabel>Ara</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
-        <a href="">
+        <a :href="links.AURORA">
           <DropdownMenuItem>
             <span>
-              Development
+              Inspire
             </span>
           </DropdownMenuItem>
         </a>
-        <a href="">
+        <a :href="links.MAYDONE">
+          <DropdownMenuItem>
+            <span>
+              Lead
+            </span>
+          </DropdownMenuItem>
+        </a>
+        <a :href="links.ACT">
+          <DropdownMenuItem>
+            <span>
+              Earn
+            </span>
+          </DropdownMenuItem>
+        </a>
+        <a :href="links.INVEST">
           <DropdownMenuItem>
             <span>
               Invest
             </span>
           </DropdownMenuItem>
         </a>
-        <a href="">
+        <a :href="links.FORUM">
           <DropdownMenuItem>
             <span>
-              About
-            </span>
-          </DropdownMenuItem>
-        </a>
-        <a href="">
-          <DropdownMenuItem>
-            <span>
-              Forum
+              Find your tribe
             </span>
           </DropdownMenuItem>
         </a>

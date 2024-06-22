@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Button } from '@/components/shared/ui/button'
-
+import links from '~/lib/links';
 </script>
 
 <template>
@@ -13,34 +13,43 @@ import { Button } from '@/components/shared/ui/button'
       </div>
       <div class="flex item gap-[48px]">
         <nav class="hidden lg:flex  gap-[32px]">
-          <a href="/#goto-ara">
+          <a :href="links.AURORA">
             <Button variant="link">
-              Development
+              Inspire
             </Button>
           </a>
-          <a href="/#goto-maydone">
+          <a :href="links.MAYDONE">
+            <Button variant="link">
+              Lead
+            </Button>
+          </a>
+          <a :href="links.ACT">
+            <Button variant="link">
+              Earn
+            </Button>
+          </a>
+          <a :href="links.INVEST">
             <Button variant="link">
               Invest
             </Button>
           </a>
-          <a href="/#goto-act">
+          <a :href="links.FORUM">
             <Button variant="link">
-              About
-            </Button>
-          </a>
-          <a href="/#goto-sangha">
-            <Button variant="link">
-              Forum
+              Find your tribe
             </Button>
           </a>
         </nav>
         <div class="hidden lg:flex gap-[32px]">
-          <Button>
-            Invest in ARA
-          </Button>
-          <Button variant="outline">
-            Join ARA
-          </Button>
+          <a :href="links.INVEST_IN_ARA">
+            <Button>
+              Invest in ARA
+            </Button>
+          </a>
+          <a :href="links.FORUM">
+            <Button variant="outline">
+              Join ARA
+            </Button>
+          </a>
         </div>
         <div class="lg:hidden">
           <FeaturesBurgerMenu />

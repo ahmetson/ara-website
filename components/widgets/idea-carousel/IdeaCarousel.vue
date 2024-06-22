@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { AspectRatio } from '~/components/shared/ui/aspect-ratio';
 import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-icons/vue';
+import links from '~/lib/links';
 
 </script>
 
@@ -19,16 +20,23 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-icons/vue';
       <CarouselItem class="pl-[20vw]">
         <div class="bg-white rounded-3xl p-8">
           <div class="flex gap-1">
-            <p>&lt;<span class="text-yellow-600">Act</span>&gt;</p>
-            <p>&lt;<span class="text-primary">Sangha</span>&gt;</p>
+            <a :href="links.FROG_WARS_ACT">
+              <p>&lt;<span class="text-yellow-600">Act</span>&gt;</p>
+            </a>
+            <a :href="links.FROG_WARS_MAYDONE">
+              <p>&lt;<span class="text-primary">Sangha</span>&gt;</p>
+            </a>
           </div>
 
           <div class="flex items-center justify-between">
             <div>
               <div class="flex items-center md:items-end gap-4">
-                <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Frog wars</h4>
+                <a :href="links.FROG_WARS_AUTHOR">
+                  <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Frog wars</h4>
+                </a>
+
                 <p class="md:mb-2 ">by <a class="text-sky-700 hover:underline"
-                    href="https://dao.frogwifcat.com/">dao.frogwifcat.com</a></p>
+                    :href="links.FROG_WARS_AUTHOR">dao.frogwifcat.com</a></p>
               </div>
               <div class="pl-8 mt-8 ">
                 <ul class="list-disc flex flex-col gap-1 md:text-[24px] text-[#828282]">
@@ -45,24 +53,35 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-icons/vue';
           </div>
 
           <div class="w-full flex items-center justify-center mt-12">
-            <Button>
-              Check out Project Page
-            </Button>
+            <a :href="links.FROG_WARS_BUTTON">
+              <Button>
+                Check out Project Page
+              </Button>
+            </a>
+
           </div>
         </div>
       </CarouselItem>
       <CarouselItem class="pl-[20vw]">
         <div class="bg-white rounded-3xl p-8">
           <div class="flex gap-1">
-            <p>&lt;<span class="text-yellow-600">Act</span>&gt;</p>
-            <p>&lt;<span class="text-red-600">Sangha</span>&gt;</p>
+            <a :href="links.ARBITRAGE_BOT_ACT">
+              <p>&lt;<span class="text-yellow-600">Act</span>&gt;</p>
+            </a>
+            <a :href="links.ARBITRAGE_BOT_SANGHA">
+              <p>&lt;<span class="text-red-600">Sangha</span>&gt;</p>
+            </a>
           </div>
 
           <div class="flex items-center justify-between">
             <div>
               <div class="flex items-center md:items-end gap-4">
-                <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Arbitrage</h4>
-                <p class="md:mb-2 ">by anonymous group</p>
+                <a :href="links.ARBITRAGE_BOT_TITLE">
+                  <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Arbitrage</h4>
+                </a>
+                <a :href="links.ARBITRAGE_BOT_AUTHOR">
+                  <p class="md:mb-2 ">by anonymous group</p>
+                </a>
               </div>
               <div class="pl-8 mt-8">
                 <ul class="list-disc flex flex-col gap-1 md:text-[24px] text-[#828282]">
@@ -79,24 +98,41 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-icons/vue';
           </div>
 
           <div class="w-full flex items-center justify-center mt-12">
-            <Button>
-              Check out Sangha
-            </Button>
+            <a :href="links.ARBITRAGE_BOT_BUTTON">
+              <Button>
+                Check out Sangha
+              </Button>
+            </a>
           </div>
         </div>
       </CarouselItem>
       <CarouselItem class="pl-[20vw]">
         <div class="bg-white rounded-3xl p-8">
           <div class="flex gap-1">
-            <p>&lt;<span class="text-sky-600">Aurora</span>&gt;</p>
-            <p>&lt;<span class="text-red-600">Sangha</span>&gt;</p>
+            <a :href="links.ARA_AURORA">
+              <p>&lt;<span class="text-sky-600">Aurora</span>&gt;</p>
+            </a>
+            <a :href="links.ARA_MAYDONE">
+              <p>&lt;<span class="text-sky-600">Maydone</span>&gt;</p>
+            </a>
+            <a :href="links.ARA_ACT">
+              <p>&lt;<span class="text-sky-600">Act</span>&gt;</p>
+            </a>
+            <a :href="links.ARA_SANGHA">
+              <p>&lt;<span class="text-red-600">Sangha</span>&gt;</p>
+            </a>
           </div>
 
           <div class="flex items-center justify-between">
             <div>
               <div class="flex items-center md:items-end gap-4">
-                <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Ara</h4>
-                <p class="md:mb-2 ">by worldwide community</p>
+                <a :href="links.ARA_TITLE">
+                  <h4 class="text-sky-700 font-bold text-[32px] md:text-[46px]">Ara</h4>
+                </a>
+                <a :href="links.ARA_AUTHOR">
+                  <p class="md:mb-2 ">by worldwide community</p>
+                </a>
+
               </div>
               <div class="pl-8 mt-8">
                 <ul class="list-disc flex flex-col gap-1 md:text-[24px] text-[#828282]">
@@ -114,9 +150,12 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@radix-icons/vue';
           </div>
 
           <div class="w-full flex items-center justify-center mt-12">
-            <Button>
-              Sign Up in Forum
-            </Button>
+            <a :href="links.ARA_BUTTON">
+              <Button>
+                Sign Up in Forum
+              </Button>
+            </a>
+
           </div>
         </div>
       </CarouselItem>
