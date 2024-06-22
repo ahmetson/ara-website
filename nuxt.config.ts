@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     head: {
       title: "ARA",
       link: [
-        { rel: 'icon', type: 'image/png', href: '/ara-logo-icon.png' }
+        { rel: 'icon', type: 'image/svg', href: '/ara_logo.svg' }
       ]
     }
   }

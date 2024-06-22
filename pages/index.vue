@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { DiscordLogoIcon, GithubLogoIcon, LinkedinLogoIcon } from '@radix-icons/vue';
 import Page from '~/components/widgets/page/Page.vue';
+import links from '~/lib/links';
 
 definePageMeta({
   name: 'ARA'
@@ -9,8 +11,8 @@ definePageMeta({
 <template>
   <div class="flex flex-col">
     <Page>
-      <section class="h-[550px]" id="hero">
-        <div class="h-full flex flex-col-reverse md:flex-row items-center gap-8">
+      <section class="h-[650px] md:h-[550px]" id="hero">
+        <div class="h-full p-8 flex flex-col md:flex-row items-center gap-8">
           <div class="flex flex-col items-start justify-between max-h-[300px] h-full">
             <div>
               <h4 class="font-bold text-[48px] text-[#A747BF]">Collaboration on<br>
@@ -18,13 +20,18 @@ definePageMeta({
               <h5 class="text-[24px] text-[#E47BF5]">All tools to go from idea to profit, start at any stage!</h5>
             </div>
 
-            <Button class="bg-[#46BFF4] hover:bg-[#46BFF4] hover:opacity-90">
-              Post your idea
-            </Button>
+            <a :href="links.FORUM">
+              <Button class="bg-[#46BFF4] hover:bg-[#46BFF4] hover:opacity-90 mt-4">
+                Post your idea
+              </Button>
+            </a>
+
           </div>
           <div class="max-w-[640px] max-h-[350px] h-full w-full">
-            <iframe allowfullscreen allowtransparency class="w-full h-full"
-              src="https://www.youtube.com/embed/suOaUQmMSGo" />
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/suOaUQmMSGo?si=gGKmQIvjQJM3rxqz"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </section>
@@ -38,99 +45,125 @@ definePageMeta({
       </div>
     </section>
     <Page>
-      <section class="mt-24" id="ara">
+      <section class="mt-24 p-8 " id="ara">
         <h4 class="font-bold tracking-wide">How Ara works?</h4>
-        <p class="mt-4">Ara consists of four tools that formulate <a class="text-sky-400" href="">Lungta</a> development
+        <p class="mt-4">Ara consists of four tools that formulate <a class="text-sky-400"
+            :href="links.LUNGTA">Lungta</a> development
           model.</p>
-        <div class="flex items-center justify-between gap-48">
+        <div class="flex flex-col xl:flex-row items-center justify-between gap-8 md:gap-48 mt-6">
           <div>
             <h5 class="font-bold text-sky-500">1 Idea Space</h5>
+            <img class="xl:hidden" src="/aurora.png" alt="Aurora">
             <div class="mt-4 grid gap-6">
               <p class="text-[#828282]">All projects start with the ideas. Share your ideas in the Idea Space. In the
                 Idea Space we discuss,
                 find
                 solution and gather like minded people as well.</p>
               <p class="text-[#828282]">
-                Right now it goes in the Ara Forum. Sign Up and post your ideas in Ara Forum with “1 Aurora” tag.
+                Right now it goes in the Ara Forum. Sign Up and post your ideas in Ara Forum with <a class="link"
+                  :href="links.AURORA">“1 Aurora”</a> tag.
               </p>
             </div>
-            <Button class="mt-6 bg-sky-400 hover:bg-sky-400/90">
-              Inspire
-            </Button>
+            <a :href="links.AURORA">
+              <Button class="mt-6 bg-sky-400 hover:bg-sky-400/90">
+                Inspire
+              </Button>
+            </a>
+
           </div>
-          <img src="/aurora.png" alt="Aurora">
+          <img class="hidden xl:block" src="/aurora.png" alt="Aurora">
         </div>
-        <div class="flex items-center justify-between gap-48">
-          <img src="/maydone.png" alt="Maydone">
+        <div class="flex flex-col-reverse xl:flex-row items-center justify-between gap-8 md:gap-48 mt-8">
+          <img class="hidden xl:block" src="/maydone.png" alt="Maydone">
           <div>
             <h5 class="font-bold text-[#3CF41E]">2 Launch pad</h5>
+
+            <img class="xl:hidden" src="/maydone.png" alt="Maydone">
             <div class="mt-4 grid gap-6">
               <p class="text-[#828282]">Launchpad is where idea is turned into a project. An expert formulate the
                 project details, anyone who sees a potential invests.</p>
               <p class="text-[#828282]">Right now, it goes in the Ara Forum.</p>
               <p class="text-[#828282]">
-                If you look to invest in the next unicorns head to “2 Maydone” tag. If you want to lead a project head
-                to “1 Aurora”, and formulate it’s details.
+                If you look to invest in the next unicorns head to <a class="link" :href="links.MAYDONE">“2 Maydone”</a>
+                tag. If you want to lead a project head
+                to <a class="link" :href="links.AURORA">“1 Aurora”</a>, and formulate it’s details.
               </p>
             </div>
             <div class="flex gap-6">
-              <Button class="mt-6 bg-[#D749EE] hover:bg-[#D749EE]/90">
-                Invest
-              </Button>
-              <Button class="mt-6 bg-[#3CF41E] hover:bg-[#3CF41E] hover:opacity-90">
-                Lead
-              </Button>
+              <a :href="links.INVEST">
+                <Button class="mt-6 bg-[#D749EE] hover:bg-[#D749EE]/90">
+                  Invest
+                </Button>
+              </a>
+              <a :href="links.MAYDONE">
+                <Button class="mt-6 bg-[#3CF41E] hover:bg-[#3CF41E] hover:opacity-90">
+                  Lead
+                </Button>
+              </a>
+
             </div>
           </div>
         </div>
-        <div class="flex items-center justify-between gap-48">
+        <div class="flex flex-col xl:flex-row items-center justify-between gap-8 md:gap-48 mt-8">
           <div>
             <h5 class="font-bold text-[#DBDE3C]">3 Development</h5>
+            <img class="xl:hidden" src="/act.png" alt="Act">
             <div class="mt-4 grid gap-6">
               <p class="text-[#828282]">Once project is initiated, the next step is Development. In Ara, all investors
                 can see the progress of project. You can also test the project.</p>
               <p class="text-[#828282]">
-                Anyone can join the development of the project. Sign up in the forum. Head to the “3 ACT” tag. From
+                Anyone can join the development of the project. Sign up in the forum. Head to the <a class="link"
+                  :href="links.ACT">“3 ACT”</a> tag. From
                 interested project find it’s tasks list. Solve them and you can get the rewards.
               </p>
             </div>
             <div class="flex gap-6">
-              <Button class="mt-6 bg-[#FBBC05] hover:bg-[#FBBC05]/90">
-                Earn
-              </Button>
+              <a :href="links.ACT">
+                <Button class="mt-6 bg-[#FBBC05] hover:bg-[#FBBC05]/90">
+                  Earn
+                </Button>
+              </a>
+
             </div>
           </div>
-          <img src="/act.png" alt="Act">
+          <img class="hidden xl:block" src="/act.png" alt="Act">
         </div>
-        <div class="flex items-center justify-between gap-48">
-          <img src="/sangha.png" alt="Act">
+        <div class="flex flex-col-reverse xl:flex-row items-center justify-between gap-8 md:gap-48 mt-8">
+          <img class="hidden xl:block" src="/sangha.png" alt="Act">
           <div>
             <h5 class="font-bold text-[#EB4335]">4 Ownership</h5>
+            <img class="xl:hidden" src="/sangha.png" alt="Act">
             <div class="mt-4 grid gap-6">
               <p class="text-[#828282]">Sangha is the project’s ownership. It’s where you govern the project, and if
                 your project is a commercial journey, then Sangha defines how the divdend is distributed across
                 investors, developers and idea owners.</p>
               <p class="text-[#828282]">Right now, it goes in the Ara Forum.</p>
               <p class="text-[#828282]">
-                If you look to get dividends, go to “4 Sangha” tag. Find the project and buy it’s tokens. If you want to
+                If you look to get dividends, go to <a class="link" :href="links.SANGHA">“4 Sangha”</a> tag. Find the
+                project and buy it’s tokens. If you want to
                 be part of people who change the world, join the team by obtaining there token.
               </p>
             </div>
             <div class="flex gap-6">
-              <Button class="mt-6 bg-[#D749EE] hover:bg-[#D749EE]/90">
-                Invest
-              </Button>
-              <Button class="mt-6 bg-[#EB4335] hover:bg-[#EB4335]/90">
-                Govern
-              </Button>
+              <a :href="links.INVEST">
+                <Button class="mt-6 bg-[#D749EE] hover:bg-[#D749EE]/90">
+                  Invest
+                </Button>
+              </a>
+              <a :href="links.SANGHA">
+                <Button class="mt-6 bg-[#EB4335] hover:bg-[#EB4335]/90">
+                  Govern
+                </Button>
+              </a>
+
             </div>
           </div>
 
         </div>
       </section>
-      <section class="mt-32 py-12" id="advantages">
+      <section class="mt-32 py-12 p-8" id="advantages">
         <h4 class="font-bold">Advtantage of Ara</h4>
-        <div class="grid grid-cols-2 gap-x-64 gap-y-12 items-start mt-12">
+        <div class="grid md:grid-cols-2 gap-x-64 gap-y-12 items-start mt-12 text-[#828282]">
           <div class="grid gap-2">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -145,9 +178,10 @@ definePageMeta({
                 d="M15.9999 9.56006C19.9441 9.56006 23.9551 10.2894 26.6738 11.8082C26.9807 11.9796 27.0905 12.3673 26.9191 12.6741C26.7478 12.9809 26.36 13.0907 26.0533 12.9193C23.5989 11.5483 19.8327 10.8328 15.9999 10.8328C12.1671 10.8328 8.40091 11.5483 5.94658 12.9193C5.63974 13.0907 5.25207 12.9809 5.08067 12.6741C4.90928 12.3673 5.01906 11.9796 5.3259 11.8082C8.0448 10.2894 12.0557 9.56006 15.9999 9.56006ZM15.9999 22.091C19.9441 22.091 23.9551 21.3615 26.6738 19.8428C26.9807 19.6714 27.0905 19.2837 26.9191 18.9769C26.7478 18.6701 26.36 18.5603 26.0533 18.7317C23.5989 20.1027 19.8327 20.8182 15.9999 20.8182C12.1671 20.8182 8.40091 20.1027 5.94658 18.7317C5.63974 18.5603 5.25207 18.6701 5.08067 18.9769C4.90928 19.2837 5.01906 19.6714 5.3259 19.8428C8.0448 21.3615 12.0557 22.091 15.9999 22.091Z"
                 fill="#454545" />
             </svg>
-            <h5 class="text-[24px]">Collaboration with Payment</h5>
-            <p class="text-[20px] text-[#828282]">
-              If you look to get dividends, go to “4 Sangha” tag. Find the project and buy it’s tokens. If you want to
+            <h5 class="text-[24px] text-black">Collaboration with Payment</h5>
+            <p>
+              If you look to get dividends, go to <a class="link" :href="links.SANGHA">“4 Sangha”</a> tag. Find the
+              project and buy it’s tokens. If you want to
               be part of people who change the world, join the team by obtaining there token.
             </p>
           </div>
@@ -158,8 +192,8 @@ definePageMeta({
                 fill="#454545" />
             </svg>
 
-            <h5 class="text-[24px]">All in One</h5>
-            <p class="text-[20px] text-[#828282]">
+            <h5 class="text-[24px] text-black">All in One</h5>
+            <p>
               Every other platform is a separated place, unlike Ara, where everything is one place. Ara is: Mind Mapping
               + Jira + Kickstrater + DAO combined together.
             </p>
@@ -172,8 +206,8 @@ definePageMeta({
             </svg>
 
 
-            <h5 class="text-[24px]">Hiring with testing</h5>
-            <p class="text-[20px] text-[#828282]">
+            <h5 class="text-[24px] text-black">Hiring with testing</h5>
+            <p>
               When you hire developers, you don’t know the code quality. Ara is collaborative, other people will help
               you to detect the malicious code. In ara, special experts take responsibility for the hired developers
               code.
@@ -188,18 +222,18 @@ definePageMeta({
 
 
 
-            <h5 class="text-[24px]">No Rug pulls and scams</h5>
-            <p class="text-[20px] text-[#828282]">
+            <h5 class="text-[24px] text-black">No Rug pulls and scams</h5>
+            <p>
               Investing in the launchpad, but they rug pulls? In Ara, you won’t encounter them.
             </p>
           </div>
         </div>
       </section>
     </Page>
-    <section class="h-[424px] bg-[#F7F7F7]" id="join-us">
+    <section class="px-8 py-12 bg-[#F7F7F7]" id="join-us">
       <Page class="h-full">
         <div class="h-full flex flex-col items-center justify-center">
-          <h4 class="font-bold">Join Us</h4>
+          <h4 class="font-bold text-[32px] md:text-[46px]">Join Us</h4>
           <div class="text-center mt-6">
             <p class="text-[#828282]">Ara is in development, be part of Ara.</p>
             <ol>
@@ -218,26 +252,32 @@ definePageMeta({
             </ol>
           </div>
           <div class="flex gap-6 mt-6">
-            <Button class="bg-[#D749EE] hover:bg-[#D749EE]/90">
-              Read Rules
-            </Button>
-            <Button class="bg-[#EB4335] hover:bg-[#EB4335]/90">
-              See the Tasks
-            </Button>
+            <a :href="links.RULES">
+              <Button class="bg-[#D749EE] hover:bg-[#D749EE]/90">
+                Read Rules
+              </Button>
+            </a>
+
+            <a :href="links.TASKBOARD">
+              <Button class="bg-[#EB4335] hover:bg-[#EB4335]/90">
+                See the Tasks
+              </Button>
+            </a>
+
           </div>
         </div>
       </Page>
     </section>
-    <section class="h-[623px] bg-[#F4FFF4]" id="invest-in-ara">
+    <section class="px-8 py-12 bg-[#F4FFF4]" id="invest-in-ara">
       <Page class="h-full">
         <div class="h-full flex flex-col items-center justify-center gap-6">
           <h4 class="font-bold">Invest in Ara</h4>
           <p class="text-[#828282]">Ara is in the development. Invest in Ara. By investing tokens, you can get part of
             it’s profit and 10x
             returns.</p>
-          <div class="grid grid-cols-2">
+          <div class="grid md:grid-cols-2 gap-8">
             <div class="text-[#828282] grid gap-4">
-              <div>
+              <div class="grid">
                 <p>Token plan:</p>
                 <ol class="list-disc ml-6">
                   <li>Total Supply: 75 Million ARA </li>
@@ -247,25 +287,23 @@ definePageMeta({
                   <li>Purchase ARA: 0.24$ per ARA.</li>
                 </ol>
               </div>
-
-              <small class="!mt-6">
-                All Purchases funds the Ara Treasury that we use to pay for salaries and contributors.
-                We give updates about the progress on Roadmap every two weeks in our forum page.
-                By funding our treasury, you become part of Ara Sangha, which means you own Ara.
-              </small>
             </div>
-            <div>
+            <div class="grid gap-4">
               <p class="text-[#828282]">Ara’s Core team:</p>
-              <div class="grid grid-cols-2">
+              <div class="grid md:grid-cols-2 gap-4">
                 <div class="flex flex-col items-center gap-2">
                   <div class="rounded-full overflow-hidden">
                     <img class="w-24 h-24" src="/ma.jpg" alt="Medet Ahmetson">
                   </div>
                   <div class="flex gap-1 items-center">
                     <p class="text-[18px] font-bold">Medet Ahmetson</p>
-                    <a href="forum"><img src="/forum_icon.png" alt="Forum"></a>
-                    <a href="linkedin"><img src="/linkedin_icon.png" alt="linkedin"></a>
-                    <a href="github"><img src="/github_icon.png" alt="github"></a>
+                    <a :href="links.FORUM"><img class="w-[22px]" src="/ara_logo.svg" alt="Forum"></a>
+                    <a :href="links.MA_LINKEDIN">
+                      <LinkedinLogoIcon />
+                    </a>
+                    <a :href="links.MA_GITHUB">
+                      <GithubLogoIcon />
+                    </a>
                   </div>
                   <div class="text-center text-[#828282]">
                     <p class="font-bold">Founder/Leader</p>
@@ -279,9 +317,13 @@ definePageMeta({
                   </div>
                   <div class="flex gap-1 items-center">
                     <p class="text-[18px] font-bold">Sergey Pak</p>
-                    <a href="forum"><img src="/forum_icon.png" alt="Forum"></a>
-                    <a href="linkedin"><img src="/linkedin_icon.png" alt="linkedin"></a>
-                    <a href="github"><img src="/github_icon.png" alt="github"></a>
+                    <a :href="links.SP_FORUM"><img class="w-[22px]" src="/ara_logo.svg" alt="Forum"></a>
+                    <a :href="links.SP_LINKEDIN">
+                      <LinkedinLogoIcon />
+                    </a>
+                    <a :href="links.SP_GITHUB">
+                      <GithubLogoIcon />
+                    </a>
                   </div>
                   <div class="text-center text-[#828282]">
                     <p class="font-bold">Founder/Tech Leader</p>
@@ -294,39 +336,50 @@ definePageMeta({
             </div>
 
           </div>
+          <small class="!mt-6 text-center max-w-[600px] text-[#828282]">
+            All Purchases funds the Ara Treasury that we use to pay for salaries and contributors.
+            We give updates about the progress on Roadmap every two weeks in our forum page.
+            By funding our treasury, you become part of Ara Sangha, which means you own Ara.
+          </small>
           <div class="flex gap-6 mt-6">
-            <Button class="bg-[#D749EE] hover:bg-[#D749EE]/90">
-              Fund Treasury
-            </Button>
-            <Button class="bg-[#EB4335] hover:bg-[#EB4335]/90">
-              Contact Us
-            </Button>
+            <a :href="links.FUND_TREASURY">
+              <Button class="bg-[#D749EE] hover:bg-[#D749EE]/90">
+                Fund Treasury
+              </Button>
+            </a>
+
+            <a :href="links.CONTACT_US">
+              <Button class="bg-[#EB4335] hover:bg-[#EB4335]/90">
+                Contact Us
+              </Button>
+            </a>
+
           </div>
         </div>
       </Page>
     </section>
     <footer>
       <Page>
-        <div class="py-16">
+        <div class="py-16 px-8">
           <hr>
-          <div class="mt-12 grid grid-cols-2">
-            <div class="flex flex-col justify-evenly">
+          <div class="mt-12 grid md:grid-cols-2 gap-8">
+            <div class="flex flex-col justify-evenly gap-4">
               <p class="font-bold text-[32px] leading-[24px]">Ara</p>
               <div class="flex gap-6 items-center">
-                <a href="/">
-                  <img src="/forum_icon.png" alt="Forum">
+                <a :href="links.FORUM">
+                  <img class="w-[22px]" src="/ara_logo.svg" alt="Forum">
                 </a>
-                <a href="/">
-                  <img src="/github_icon.png" alt="Github">
+                <a :href="links.GITHUB">
+                  <GithubLogoIcon class="w-[24px]"></GithubLogoIcon>
                 </a>
-                <a href="/">
-                  <img src="/telegram_icon.png" alt="Telegram">
+                <a :href="links.TELEGRAM">
+                  <img class="w-[24px]" src="/telegram.svg" alt="Telegram">
                 </a>
-                <a href="/">
-                  <img src="/discord_icon.png" alt="Discord">
+                <a :href="links.DISCORD">
+                  <DiscordLogoIcon />
                 </a>
-                <a href="/">
-                  <img src="/youtube_icon.png" alt="Youtube">
+                <a :href="links.YOUTUBE">
+                  <img class="w-[24px]" src="/youtube.svg" alt="Youtube">
                 </a>
               </div>
             </div>
@@ -335,22 +388,39 @@ definePageMeta({
                 <p class="font-bold">
                   Use ara
                 </p>
-                <div class="grid gap-4 mt-6">
-                  <p>Aurora</p>
-                  <p>Maydone</p>
-                  <p>ACT</p>
-                  <p>Sangha</p>
+                <div class="grid gap-4 mt-6 text-[#828282]">
+                  <a :href="links.AURORA">
+                    <p>Aurora</p>
+                  </a>
+                  <a :href="links.MAYDONE">
+                    <p>Maydone</p>
+                  </a>
+                  <a :href="links.ACT">
+                    <p>ACT</p>
+                  </a>
+                  <a :href="links.SANGHA">
+                    <p>Sangha</p>
+                  </a>
                 </div>
               </div>
               <div>
                 <p class="font-bold">
                   Ara
                 </p>
-                <div class="grid gap-4 mt-6">
-                  <p>ARA token</p>
-                  <p>Whitepaper</p>
-                  <p>Roadmap</p>
-                  <p>Lungta Model</p>
+                <div class="grid gap-4 mt-6 text-[#828282]">
+                  <a :href="links.ARA_TITLE">
+                    <p>ARA token</p>
+                  </a>
+                  <a :href="links.WHITEPAPER">
+                    <p>Whitepaper</p>
+                  </a>
+                  <a :href="links.ROADMAP">
+                    <p>Roadmap</p>
+                  </a>
+                  <a :href="links.LUNGTA">
+                    <p>Lungta Model</p>
+                  </a>
+
                 </div>
 
               </div>
@@ -358,11 +428,19 @@ definePageMeta({
                 <p class="font-bold">
                   People
                 </p>
-                <div class="grid gap-4 mt-6">
-                  <p>Owners</p>
-                  <p>Maintainers</p>
-                  <p>Contributors</p>
-                  <p>Email Us</p>
+                <div class="grid gap-4 mt-6 text-[#828282]">
+                  <a :href="links.OWNERS">
+                    <p>Owners</p>
+                  </a>
+                  <a :href="links.MAINTAINERS">
+                    <p>Maintainers</p>
+                  </a>
+                  <a :href="links.CONTRIBUTORS">
+                    <p>Contributors</p>
+                  </a>
+                  <a :href="links.EMAIL">
+                    <p>Email Us</p>
+                  </a>
                 </div>
 
               </div>
@@ -375,3 +453,13 @@ definePageMeta({
   </div>
 
 </template>
+
+<style>
+a.link {
+  @apply text-sky-400 hover:underline
+}
+
+a {
+  @apply hover:underline decoration-inherit
+}
+</style>
