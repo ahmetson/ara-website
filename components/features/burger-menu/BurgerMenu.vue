@@ -52,15 +52,16 @@ import links from '~/lib/links';
         </a>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <span>GitHub</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem>
-        <span>Support</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem disabled>
-        <span>API</span>
-      </DropdownMenuItem>
+      <a :href="links.INVEST_IN_ARA">
+        <DropdownMenuItem>
+          <span>Invest in ARA</span>
+        </DropdownMenuItem>
+      </a>
+      <a :href="links.FORUM">
+        <DropdownMenuItem>
+          <span>Join ARA</span>
+        </DropdownMenuItem>
+      </a>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
